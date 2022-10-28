@@ -26,16 +26,39 @@
               "angle": 0,
               "id": "a223d8c0-4bbc-4101-ba52-c537138b21f2",
               "z": 1,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "b2a6d40d-d3f8-4750-8e4d-c02cc84b13dc",
+                  "title": "Auth Challenge DDoS Attack",
+                  "type": "Denial of service",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Low",
+                  "description": "By opening a lot of Auth Challenges, without ever fullfilling them, the service is going to be slowed down/crashed\n\nlow risk * medium chance = low Priority",
+                  "mitigation": "limit Auth Challenges\n\nlow Priority",
+                  "threatId": "61ed9f24-1697-4065-9730-bda0ef2136f0"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "modelType": "STRIDE",
+                  "type": "Repudiation",
+                  "title": "Random phone numbers",
+                  "description": "by inserting random phone numbers/user accounts it is unkown who send the attack",
+                  "mitigation": "verifying it is your account/number\n\nlow Priority",
+                  "threatId": "45a641dd-1f93-4b82-88cb-2a53a442f304"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "Login System -\nWebapp +\nMobile App"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -78,16 +101,38 @@
               "angle": 0,
               "id": "c95569c4-e476-4fe0-b5cd-80143cb2a030",
               "z": 3,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "modelType": "STRIDE",
+                  "type": "Elevation of privilege",
+                  "title": "SQL Injection",
+                  "description": "By inserting an intentionally wrong text as a phone number one might be able to inject harmful code into the authenticator.\n\nREALLY HIGH RISK * low chance = high Priority",
+                  "mitigation": "test for real number/ check for Escaping\n\nmedium priority",
+                  "threatId": "1a9ae5c8-31ea-4536-a973-2ebf855ccdc1"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "modelType": "STRIDE",
+                  "title": "SQL Injection",
+                  "type": "Tampering",
+                  "description": "siehe andere Threat\n\n\nREALLY HIGH RISK * low chance = high Priority",
+                  "mitigation": "test for real number/ check for Escaping\n\nmedium Priority",
+                  "threatId": "2b3a8b95-be32-407e-b3aa-d813cb101200"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "2-Faktor-Authentifizieru-\nngsdiensts"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -114,44 +159,6 @@
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
-                }
-              }
-            },
-            {
-              "type": "tm.Flow",
-              "size": {
-                "width": 10,
-                "height": 10
-              },
-              "smooth": true,
-              "source": {
-                "id": "a223d8c0-4bbc-4101-ba52-c537138b21f2"
-              },
-              "target": {
-                "id": "c95569c4-e476-4fe0-b5cd-80143cb2a030"
-              },
-              "vertices": [],
-              "id": "3ad57799-086f-4039-b4aa-8dc49caf88e8",
-              "labels": [
-                {
-                  "position": 0.5,
-                  "attrs": {
-                    "text": {
-                      "text": "1. Auth Challenge",
-                      "font-weight": "400",
-                      "font-size": "small"
-                    }
-                  }
-                }
-              ],
-              "z": 5,
-              "hasOpenThreats": false,
-              "attrs": {
-                ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
-                },
-                ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
                 }
               }
             },
@@ -266,16 +273,28 @@
               "angle": 0,
               "id": "90d5856b-ad49-408d-b43a-2ae6ae5cdac4",
               "z": 8,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "modelType": "STRIDE",
+                  "type": "Repudiation",
+                  "description": "intern steals OTTs, potentially to log into the accounts\n\nhigh risk * low chance = medium Priority",
+                  "title": "Internal Threat",
+                  "mitigation": "FaceID for Door\n\nlow priority",
+                  "threatId": "69f97ebd-288e-4449-a629-ff26c0548b0d"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "All Secure\nMobile Phone\nOTT Service"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -292,16 +311,28 @@
               "angle": 0,
               "id": "bcb2450c-7c35-4f30-a449-8cfd6dd2f282",
               "z": 9,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Low",
+                  "modelType": "STRIDE",
+                  "type": "Denial of service",
+                  "title": "Mass Wrongful Requests",
+                  "description": "by repeatedly entering wrong OTTs the System might overflow\n\nmedium risk * low chance = low Priority",
+                  "mitigation": "more space/ detection of patterns\n\nlow priority",
+                  "threatId": "e4e58667-b27e-43c6-8a75-722af2034ebe"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "SIEM-System"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -312,27 +343,39 @@
                 "height": 80
               },
               "position": {
-                "x": 353,
-                "y": 447
+                "x": 354,
+                "y": 449
               },
               "angle": 0,
               "id": "186ba5dc-4def-454c-8bea-38d5123eaa09",
               "z": 10,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": true,
               "storesCredentials": false,
-              "isEncrypted": true,
+              "isEncrypted": false,
               "storesInventory": true,
               "isSigned": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "modelType": "STRIDE",
+                  "type": "Information disclosure",
+                  "description": "SIEM Data is not encrypted, if one gets access they can read the entire table\n\nhigh risk * low chance = Medium Priority",
+                  "mitigation": "Encryption with salt\n\nlow priority",
+                  "title": "Unencrypted database",
+                  "threatId": "b49b58ea-a217-4d35-8098-15ac9dffd570"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "Log Datenbank"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -349,16 +392,28 @@
               "angle": 0,
               "id": "a2063235-c435-4c5d-a671-464a84a0088a",
               "z": 11,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Low",
+                  "modelType": "STRIDE",
+                  "type": "Repudiation",
+                  "description": "potential of encryption of data, thus \"erasing\" entry of a potential harmful person\nsince database is only backed up every Month\n\nmedium risk * low chance = low Priority",
+                  "title": "Monthly Report bad",
+                  "mitigation": "every Week/Day/Hour\n\nlow priority",
+                  "threatId": "b2ed3a17-5e93-492f-887a-30689591f003"
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "Export"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -828,13 +883,25 @@
                 }
               ],
               "z": 24,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Low",
+                  "modelType": "STRIDE",
+                  "type": "Denial of service",
+                  "title": "Spoofing a fake OTT + Number",
+                  "description": "if we spoof a fake telefon and OTT Message from the phone Company we can generate messages that never get answered in the app\n\nlow risk * low chance = low priority",
+                  "mitigation": "checking incoming Packages\n\nlow priority",
+                  "threatId": "3d7b7880-a61e-4c49-8919-24e100756847"
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
@@ -866,14 +933,26 @@
                 }
               ],
               "z": 25,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isEncrypted": false,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "modelType": "STRIDE",
+                  "title": "Is SMS not encrypted?",
+                  "type": "Spoofing",
+                  "description": "SMS might be read by people not intended for",
+                  "mitigation": "use good encryption algorithms",
+                  "threatId": "1e14fa5b-60c9-4405-83fd-be0900ebfa8d"
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
@@ -923,13 +1002,17 @@
               },
               "smooth": true,
               "source": {
-                "x": 1831,
-                "y": 145
+                "id": "52b2e2c4-4da8-41f9-b89e-76747d7c2872"
               },
               "target": {
                 "id": "2f3b49cf-da0b-4a21-ad9d-ba6fa83f9546"
               },
-              "vertices": [],
+              "vertices": [
+                {
+                  "x": 1871,
+                  "y": 142
+                }
+              ],
               "id": "39a79c49-d781-481e-8b5c-2d915914b4fc",
               "labels": [
                 {
@@ -967,7 +1050,12 @@
               "target": {
                 "id": "52b2e2c4-4da8-41f9-b89e-76747d7c2872"
               },
-              "vertices": [],
+              "vertices": [
+                {
+                  "x": 1868,
+                  "y": 244
+                }
+              ],
               "id": "7bae168b-54c1-4a84-bb19-7224129bd805",
               "labels": [
                 {
@@ -1233,6 +1321,44 @@
                 }
               ],
               "z": 34,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "a223d8c0-4bbc-4101-ba52-c537138b21f2"
+              },
+              "target": {
+                "id": "c95569c4-e476-4fe0-b5cd-80143cb2a030"
+              },
+              "vertices": [],
+              "id": "7a5d4f3e-3413-4929-80a5-984f4394481c",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Auth Challenge",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 35,
               "hasOpenThreats": false,
               "attrs": {
                 ".marker-target": {
