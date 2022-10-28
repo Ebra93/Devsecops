@@ -36,7 +36,7 @@
                   "status": "Open",
                   "severity": "Low",
                   "description": "By opening a lot of Auth Challenges, without ever fullfilling them, the service is going to be slowed down/crashed\n\nlow risk * medium chance = low Priority",
-                  "mitigation": "limit Auth Challenges\n\nlow Priority",
+                  "mitigation": "limit Auth Challenges or use a cloud service for payload balancing\n\nlow Priority",
                   "threatId": "61ed9f24-1697-4065-9730-bda0ef2136f0"
                 },
                 {
@@ -361,7 +361,7 @@
                   "severity": "Medium",
                   "modelType": "STRIDE",
                   "type": "Information disclosure",
-                  "description": "SIEM Data is not encrypted, if one gets access they can read the entire table\n\nhigh risk * low chance = Medium Priority",
+                  "description": "SIEM Data is not encrypted, if one gets access they can read the entire table\nSpear Fishing to get access\nhigh risk * low chance = Medium Priority",
                   "mitigation": "Encryption with salt\n\nlow priority",
                   "title": "Unencrypted database",
                   "threatId": "b49b58ea-a217-4d35-8098-15ac9dffd570"
@@ -1305,6 +1305,10 @@
                 {
                   "x": 322,
                   "y": 523
+                },
+                {
+                  "x": 300,
+                  "y": 520
                 }
               ],
               "id": "c962289e-ddff-4148-bfa7-859cbe6823f6",
