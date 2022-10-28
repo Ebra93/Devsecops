@@ -399,7 +399,7 @@
                   "severity": "Low",
                   "modelType": "STRIDE",
                   "type": "Repudiation",
-                  "description": "potential of encryption of data, thus \"erasing\" entry of a potential harmful person\nsince database is only backed up every Month\n\nmedium risk * low chance = low Priority",
+                  "description": "potential of encryption of data, thus \"erasing\" entry of a potential harmful person\nsince database is only backed up every Month\n\nMan in The Middle Attack onto unencrypted data\n\nmedium risk * low chance = low Priority",
                   "title": "Monthly Report bad",
                   "mitigation": "every Week/Day/Hour\n\nlow priority",
                   "threatId": "b2ed3a17-5e93-492f-887a-30689591f003"
@@ -942,8 +942,8 @@
                   "modelType": "STRIDE",
                   "title": "Is SMS not encrypted?",
                   "type": "Spoofing",
-                  "description": "SMS might be read by people not intended for",
-                  "mitigation": "use good encryption algorithms",
+                  "description": "SMS might be read by people not intended for\n\nMan in the Middle\nhigh risk * low probability = medium Priority",
+                  "mitigation": "use good encryption algorithms\n\nData Signature to prove correct transmission",
                   "threatId": "1e14fa5b-60c9-4405-83fd-be0900ebfa8d"
                 }
               ],
@@ -984,13 +984,35 @@
                 }
               ],
               "z": 26,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "modelType": "STRIDE",
+                  "type": "Information disclosure",
+                  "description": "if the user is in an unsecure WIFI a man in the middle could read unencrypted data and if the router or proxy is the harmful person they could change packets\n\nhigh risk * medium chance = high priority",
+                  "mitigation": "using strong Encryption and a signature",
+                  "title": "WIFI MITM",
+                  "threatId": "a13139cb-88a1-494a-b319-97d1608cbe62"
+                },
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "modelType": "STRIDE",
+                  "type": "Tampering",
+                  "title": "WIFI MITM",
+                  "threatId": "1e08d8ac-d802-48b5-9cdc-af288f70c773",
+                  "description": "if the user is in an unsecure WIFI a man in the middle could read unencrypted data\n\nhigh risk * medium chance = high priority",
+                  "mitigation": "using strong Encryption and a signature"
+                }
+              ],
               "attrs": {
                 ".marker-target": {
-                  "class": "marker-target hasNoOpenThreats isInScope"
+                  "class": "marker-target hasOpenThreats isInScope"
                 },
                 ".connection": {
-                  "class": "connection hasNoOpenThreats isInScope"
+                  "class": "connection hasOpenThreats isInScope"
                 }
               }
             },
